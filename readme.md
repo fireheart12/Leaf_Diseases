@@ -74,3 +74,38 @@ Homepage : *https://opencv.org/*
 Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/plot1.png)
+
+# Exploratory Data Analysis(EDA) : 
+
+When we’re getting started with a machine learning (ML) project, one critical principle to keep in mind is that data is everything. It is often said that if ML is the rocket engine, then the fuel is the (high-quality) data fed to ML algorithms. However, deriving truth and insight from a pile of data can be a complicated and error-prone job. To have a solid start for our ML project, it always helps to analyze the data up front.
+
+During EDA, it’s important that we get a deep understanding of:
+
+* The **properties of the data**, such as schema and statistical properties;
+* The **quality of the data**, like missing values and inconsistent data types;
+* The **predictive power of the data**, such as correlation of features against target.
+
+Firstly, the number of various examples belonging to each class were identified and plotted.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/eda_01.png)
+
+Secondly, the color channel distributions were analyzed for the images from the dataset and plotted using seaborn : 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/eda_02.png)
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/eda_03.png)
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/eda_04.png)
+
+**Inference drawn** : 
+
+* Red channel has positive skew, meaning the values are more concentrated at intensities lower than mean(somewhere around 90).
+* Green channel is negative skew, meaning the values are more concentrated at intentities higher than mean(somewhere in the range 130-150). This also means that green channel is more pronounced than red in the sample image set; and thereby the whole data set as they come from the same distribution. This makes sense as images are that of leaves!
+Similarily, blue channel has a slight positive skew and is very well distributed.
+* The distribution of red and green color channels appears to be mesokurtic, aka normally distributed having k = 0 whereas the blue one appears to be relatively platykurtic having k < 0. Therefore out of the three colors, blue channel appears to be the most different one(relative outlier in the RGB color space).
+
+Post this, a sample image is randomly taken on which we will test fire the coming functions in the **Image Processing** segment.
+
+Sample image : 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/sample_image.png)
+
+# Image Processing : 
