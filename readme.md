@@ -2,7 +2,7 @@
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/promotional_pic.webp)
 
-## (I) Abstract : 
+# (I) Abstract : 
 
 Misdiagnosis of the many diseases have a colossal impact on agricultural crops which in turn leads to misuse of chemicals leading to the emergence of resistant pathogen strains, increased input costs, and more outbreaks with significant economic loss and environmental impacts.
 
@@ -12,7 +12,7 @@ This project was part of Plant Pathology 2020 challenge hosted a while back on k
 
 **https://www.kaggle.com/c/plant-pathology-2020-fgvc7** 
 
-## (II) Dataset Used : 
+# (II) Dataset Used : 
 
 Apple orchards in the U.S. are under constant threat from a large number of pathogens and insects. Appropriate and timely deployment of disease management depends on early disease detection. Incorrect and delayed diagnosis can result in either excessive or inadequate use of chemicals, with increased production costs, environmental, and health impacts. We have manually captured 3,651 high-quality, real-life symptom images of multiple apple foliar diseases, with variable illumination, angles, surfaces, and noise. A subset, expert-annotated to create a pilot dataset for apple scab, cedar apple rust, and healthy leaves, was made available to the Kaggle community for 'Plant Pathology Challenge'; part of the Fine-Grained Visual Categorization (FGVC) workshop at CVPR 2020 (Computer Vision and Pattern Recognition). 
 
@@ -75,7 +75,7 @@ Seaborn is a Python data visualization library based on matplotlib. It provides 
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/plot1.png)
 
-# Exploratory Data Analysis(EDA) : 
+# (IV) Exploratory Data Analysis(EDA) : 
 
 When we’re getting started with a machine learning (ML) project, one critical principle to keep in mind is that data is everything. It is often said that if ML is the rocket engine, then the fuel is the (high-quality) data fed to ML algorithms. However, deriving truth and insight from a pile of data can be a complicated and error-prone job. To have a solid start for our ML project, it always helps to analyze the data up front.
 
@@ -108,4 +108,27 @@ Sample image :
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/sample_image.png)
 
-# Image Processing : 
+# (V) Image Processing : 
+
+## Image Denoising : 
+
+Many image smoothing techniques like Gaussian Blurring, Median Blurring etc were good to some extent in removing small quantities of noise. In those techniques, we took a small neighbourhood around a pixel and performed some operations like gaussian weighted average, median of the values etc to replace the central element. In short, noise removal at a pixel was local to its neighbourhood.
+
+There is a property of noise. Noise is generally considered to be a random variable with zero mean.
+
+Suppose we hold a static camera to a certain location for a couple of seconds. This will give us plenty of frames, or a lot of images of the same scene. Then averaging all the frames, we compare the final result and first frame. Reduction in noise would be easily observed.
+
+So idea is simple, we need a set of similar images to average out the noise. Considering a small window (say 5x5 window) in the image, chance is large that the same patch may be somewhere else in the image. Sometimes in a small neighbourhood around it. Hence, using these similar patches together averaging them can lead to an efficient denoised image.
+
+This method is Non-Local Means Denoising. It takes more time compared to blurring techniques, but the result are very satisfying.
+
+Denoising illustration :
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/lena_denoised.png)
+
+Following was the output when this function was test fired on our sample image : 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/denoised_sample.png)
+
+## Edge Detection Using Sobel Filter : 
+
