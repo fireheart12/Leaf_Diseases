@@ -276,7 +276,7 @@ We trained only on 100 epochs to visualize the trends in our loss and accuracy. 
 
 # Thank you for your time to read this far ~~
 
-* Contacts : *bauraiaditya7@gmail.com*
+* Contact : *bauraiaditya7@gmail.com* 
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/ty.webp)
 
