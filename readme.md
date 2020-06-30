@@ -36,3 +36,23 @@ Some sample images from the training dataset :
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/sample2.jpg)
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/sample3.jpg)
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/sample4.jpg)
+
+# (III) Libraries used :
+
+## Numpy :
+
+Fundamental package for scientific computing in Python3, helping us in creating and managing n-dimensional tensors. A vector can be regarded as a 1-D tensor, matrix as 2-D, and so on. 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/tensor.jpg)
+
+## Matplotlib :
+
+A Python3 plotting library used for data visualization.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/visualize.webp)
+
+## Tensorflow :
+
+Is an open source deep learning framework for dataflow and differentiable programming. It’s created and maintained by Google.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/tf%20loves%20keras.png)
