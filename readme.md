@@ -224,3 +224,24 @@ K-means is mostly useful for applications like image compression or object recog
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/kmeans.png)
 
+# (VI) Handling Imbalanced Dataset :
+
+In Exploratory Data Analysis, we plotted a pie chart depticting number of classes in the training data set. It was observed that the 'multiple diseased' class was in minority, hence creating an imbalance between the class distributions. In order to cater that, we will be using **SMOTE algorithm** to try and increase the minority class in our data set.
+
+**SMOTE stands for Synthetic Minority Oversampling Technique**.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/SMOTE.png)
+
+This algorithm aims to balance class distribution by randomly increasing minority class examples by replicating them. SMOTE synthesizes new minority instances between existing minority instances.
+
+An amazing video explaining it can be found on YouTube : *https://www.youtube.com/watch?v=FheTDyCwRdE*
+
+**Output after applying SMOTE** : 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/SMOTE_output.png) 
+
+Now, it's a well balanced dataset :-)
+
+# (VII) Transfer Learning with Fine Tuning :
+
+
