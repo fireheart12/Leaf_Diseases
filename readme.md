@@ -68,3 +68,9 @@ OpenCV (Open Source Computer Vision Library) is an open source computer vision a
 Homepage : *https://opencv.org/*
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/opencv.png)
+
+## Seaborn : 
+
+Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/plot1.png)
