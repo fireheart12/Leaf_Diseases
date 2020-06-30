@@ -198,3 +198,29 @@ Using the canny version, we find our region of interest and therefore crop some 
 
 ## Local Histogram Equalization : 
 
+**First of all, why can we not apply histogram equalization directly to an RGB image?**
+
+Histogram equalization is a non-linear process. Channel splitting and equalizing each channel separately is incorrect. Equalization involves intensity values of the image, not the color components. So for a simple RGB color image, histogram equalization cannot be applied directly on the channels. It needs to be applied in such a way that the intensity values are equalized without disturbing the color balance of the image. So, the first step is to convert the color space of the image from RGB into one of the color spaces that separates intensity values from color components. Some of the possible options are HSV/HLS, YUV, YCbCr, etc. YCbCr is preferred as it is designed for digital images. Perform histogram equalization on the intensity plane Y. Now convert the resultant YCbCr image back to RGB.
+
+(Excerpt taken from :
+
+*https://prateekvjoshi.com/2013/11/22/histogram-equalization-of-rgb-images/* )
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/histogram__result.png)
+
+## Image Segmentation(Half-Toned Images) : Otsu's Binarization 
+
+In global thresholding, we used an arbitrary chosen value as a threshold. In contrast, Otsu's method avoids having to choose a value and determines it automatically. We will apply Otsu's binarization segmentation method on the histogram equalized image obtained in the previous stage.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/otsu.png)
+
+## Image Segmentation(Colored Images) : K-means Clustering
+
+In the previous section we explored image segmentation using Otsu's Binarization. However, this is applied normally on half toned, that is binary(black and white) images. In this section, we will explore a Machine Learning technique called K-means clustering to segment the different areas of the image.
+
+Once again, the operation will be performed on the histogram equalized image of plant leaf.
+
+K-means is mostly useful for applications like image compression or object recognition, because for these types of applications, it is inefficient to process the whole image.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/kmeans.png)
+
