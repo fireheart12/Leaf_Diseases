@@ -189,3 +189,12 @@ Further information can be found on OpenCV's documentation : *https://docs.openc
 Following was the output when this function was test fired on our sample image :
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/canny.png)
+
+## ROI and Edge ROI Image : 
+
+Using the canny version, we find our region of interest and therefore crop some fraction of the image. This reduces the processing data to some extent per image.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/roi_and_edge.png)
+
+## Local Histogram Equalization : 
+
