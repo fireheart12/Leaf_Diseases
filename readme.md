@@ -51,8 +51,20 @@ A Python3 plotting library used for data visualization.
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/visualize.webp)
 
-## Tensorflow :
+## Tensorflow-Keras :
 
 Is an open source deep learning framework for dataflow and differentiable programming. It’s created and maintained by Google.
 
 ![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/tf%20loves%20keras.png)
+
+## Tqdm :
+
+Is a progress bar library with good support for nested loops and Jupyter notebooks.
+
+## OpenCV : 
+
+OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. The library is used extensively in companies, research groups and by governmental bodies.
+
+Homepage : *https://opencv.org/*
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/opencv.png)
