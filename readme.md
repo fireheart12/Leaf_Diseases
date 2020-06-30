@@ -244,4 +244,22 @@ Now, it's a well balanced dataset :-)
 
 # (VII) Transfer Learning with Fine Tuning :
 
+Transfer learning allows us to train deep networks using significantly less data then we would need if we had to train from scratch. With transfer learning, we are in effect transferring the “knowledge” that a model has learned from a previous task, to our current one.
 
+Transfer learning has been consistently proven to boost model accuracy and reduce require training time. Less data, less time, more accuracy.
+
+Here, we will be using VGG-16 neural network architecture.
+
+## VGG-16 Architecture : 
+
+The VGG-16 model is a 16-layer (convolution and fully connected) network built on the ImageNet database. 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/vgg_16_two.png)
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/VGG-16_one.png)
+
+Here, in the fine tuning step we will freeze the initial pre-trained layers having the weights learned from the imagenet dataset, however the last few convolution-pooling layers will remain unfreezed, allowing us to train them on our dataset. Note that, we will be designing a custom head as the original VGG aimed to predict out of 1000 classes, whereas we only have four.
+
+Also, it's been proven that adding a Global Average Pooling layer before the fully connected layer imroves the accuracy of the model considerably.
+
+**Global Average Pooling. Global Average Pooling is an operation that calculates the average output of each feature map in the previous layer. This fairly simple operation reduces the data significantly and prepares the model for the final classification layer**.
