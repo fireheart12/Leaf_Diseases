@@ -263,3 +263,14 @@ Here, in the fine tuning step we will freeze the initial pre-trained layers havi
 Also, it's been proven that adding a Global Average Pooling layer before the fully connected layer imroves the accuracy of the model considerably.
 
 **Global Average Pooling. Global Average Pooling is an operation that calculates the average output of each feature map in the previous layer. This fairly simple operation reduces the data significantly and prepares the model for the final classification layer**.
+
+* **Bottleneck features** : The last activation feature map in the VGG-16 model (output from block5_pool) gives us the bottleneck features, which can then be flattened and fed to a fully connected deep neural network classifier. We flatten the bottleneck features in the vgg_model object to make them ready to be fed to our fully connected classifier. *A way to save time in model training is to use this model and extract out all the features from our training and validation datasets and then feed them as inputs to our classifier*.
+
+# (VIII) Results : 
+
+We trained only on 100 epochs to visualize the trends in our loss and accuracy. *Following trends were observed for just 100 epochs. The network can be further trained for more accuracy.* 
+
+**Here we achieved the accuracy close to 90%**.
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/res.png)
+
