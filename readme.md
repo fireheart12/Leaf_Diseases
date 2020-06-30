@@ -132,3 +132,63 @@ Following was the output when this function was test fired on our sample image :
 
 ## Edge Detection Using Sobel Filter : 
 
+Edge detection is one of the fundamental operation in image processing. Using this, we can reduce the amount of pixels while maintaining the structural aspect of the images.
+
+The basic operation involved behind edge detection is called Convolution and is illustrated below : 
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/edge_detection_sobel.png)
+
+Edges can be detected using various kinds of filters.
+
+* First derivative based Sobel filter(for thicker edges)
+* Second derivative based Laplacian filter(for finer edges)
+
+Here, we want to consider the area containing only the leaf, while ignoring the background green. Hence, we use Sobel filter to identify the prominent edge of the leaf.
+
+Following was the output when this function was test fired on our sample image :
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/sobel_results.png)
+
+Using sobel filter we found the edges, however for further pre-processing we aim to consider only the area of the leaf, that is the fine textured area we see in the gradient images. For that, we will use a much powerful inbuilt function of open-CV called Canny(). This function will return the edge coordinates.
+
+Entire read is available on the OpenCV webpage :
+
+*https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html#canny*
+
+## Canny Edge Detector : 
+
+The Canny filter is a multi-stage edge detector. It uses a filter based on the derivative of a Gaussian in order to compute the intensity of the gradients.The Gaussian reduces the effect of noise present in the image. Then, potential edges are thinned down to 1-pixel curves by removing non-maximum pixels of the gradient magnitude. Finally, edge pixels are kept or removed using hysteresis thresholding on the gradient magnitude.
+
+The Canny has three adjustable parameters: the width of the Gaussian (the noisier the image, the greater the width), and the low and high threshold for the hysteresis thresholding.
+
+The Canny edge detection algorithm is composed of 5 steps:
+
+* Noise reduction
+* Gradient calculation
+* Non-maximum suppression
+* Double threshold
+* Edge Tracking by Hysteresis
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/harry%20potter.png)
+
+* **Noise Reduction** - One way to get rid of the noise on the image, is by applying Gaussian blur to smooth it. To do so, image convolution technique is applied with a Gaussian Kernel (3x3, 5x5, 7x7 etc…). The kernel size depends on the expected blurring effect. Basically, the smallest the kernel, the less visible is the blur.
+* **Gradient Calculation** - The Gradient calculation step detects the edge intensity and direction by calculating the gradient of the image using edge detection operators.
+The result is almost the expected one, but we can see that some of the edges are thick and others are thin. Non-Max Suppression step will help us mitigate the thick ones.
+* **Non-Maximum Supression** - Ideally, the final image should have thin edges. Thus, we must perform non-maximum suppression to thin out the edges.
+* **Double Threshold** - The double threshold step aims at identifying 3 kinds of pixels: strong, weak, and non-relevant:
+ *Strong pixels are pixels that have an intensity so high that we are sure they contribute to the final edge.
+ *Weak pixels are pixels that have an intensity value that is not enough to be considered as strong ones, but yet not small enough to be considered as non-relevant for the edge detection.
+ *Other pixels are considered as non-relevant for the edge.
+
+Therefore, the significance of having two values in double threshold :
+ - High threshold is used to identify the strong pixels (intensity higher than the high threshold)
+ - Low threshold is used to identify the non-relevant pixels (intensity lower than the low threshold)
+ - All pixels having intensity between both thresholds are flagged as weak and the Hysteresis mechanism (next step) will help us identify the ones that could be considered as strong and the ones that are considered as non-relevant.
+
+* **Hysterisis** - Based on the threshold results, the hysteresis consists of transforming weak pixels into strong ones, if and only if at least one of the pixels around the one being processed is a strong one. We will be using OpenCV's implementation of Canny edge detection. This was the theory involved behind the entire process.
+
+Further information can be found on OpenCV's documentation : *https://docs.opencv.org/trunk/da/d22/tutorial_py_canny.html*
+
+Following was the output when this function was test fired on our sample image :
+
+![](https://github.com/CodingWitcher/Leaf_Diseases/blob/master/images_for_readme/canny.png)
