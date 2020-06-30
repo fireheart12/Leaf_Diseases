@@ -175,10 +175,7 @@ The Canny edge detection algorithm is composed of 5 steps:
 * **Gradient Calculation** - The Gradient calculation step detects the edge intensity and direction by calculating the gradient of the image using edge detection operators.
 The result is almost the expected one, but we can see that some of the edges are thick and others are thin. Non-Max Suppression step will help us mitigate the thick ones.
 * **Non-Maximum Supression** - Ideally, the final image should have thin edges. Thus, we must perform non-maximum suppression to thin out the edges.
-* **Double Threshold** - The double threshold step aims at identifying 3 kinds of pixels: strong, weak, and non-relevant:
- *Strong pixels are pixels that have an intensity so high that we are sure they contribute to the final edge.
- *Weak pixels are pixels that have an intensity value that is not enough to be considered as strong ones, but yet not small enough to be considered as non-relevant for the edge detection.
- *Other pixels are considered as non-relevant for the edge.
+* **Double Threshold** - The double threshold step aims at identifying 3 kinds of pixels: strong, weak, and non-relevant: **Strong pixels** are pixels that have an intensity so high that we are sure they contribute to the final edge. **Weak pixels** are pixels that have an intensity value that is not enough to be considered as strong ones, but yet not small enough to be considered as non-relevant for the edge detection. **Other pixels** are considered as non-relevant for the edge.
 
 Therefore, the significance of having two values in double threshold :
  - High threshold is used to identify the strong pixels (intensity higher than the high threshold)
